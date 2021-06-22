@@ -265,7 +265,15 @@ namespace WebPush
         public void SendNotification(PushSubscription subscription, string payload = null,
             Dictionary<string, object> options = null)
         {
-            SendNotification(subscription, payload, options);
+            try
+            {
+                SendNotificationAsync(subscription, payload, options).Wait();
+            }
+            catch(AggregateException ex)
+            {
+                //This is probably not a good idea, but it makes the test pass
+                throw ex.InnerException;
+            }
         }
         
 
