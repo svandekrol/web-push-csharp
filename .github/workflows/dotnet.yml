@@ -24,12 +24,12 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack
+      run: dotnet --no-build pack --verbosity normal
     - name: Upload package
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: ~/**/WebPush.1.0.11.nupkg
+        path: bin/**/WebPush.1.0.11.nupkg
   
   publish:
     needs: build
