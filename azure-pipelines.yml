@@ -15,3 +15,11 @@ steps:
     command: 'restore'
     projects: 'WebPush.sln'
     feedsToUse: 'select'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'WebPush.sln'
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    packagesToPack: '**/*.csproj'
