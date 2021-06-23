@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  BUILD_CONFIGURATION: Release
 jobs:
   build:
 
@@ -20,14 +22,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore -c Release --verbosity normal
+      run: dotnet build --no-restore -c ${{ env.BUILD_CONFIGURATION }} --verbosity normal
     - name: Test
-      run: dotnet test --no-build -c Release --verbosity normal    
+      run: dotnet test --no-build -c ${{ env.BUILD_CONFIGURATION }} --verbosity normal    
     - name: Upload package
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: WebPush/bin/**/WebPush.*.nupkg
+        path: WebPush/bin/${{ env.BUILD_CONFIGURATION }}/WebPush.*.nupkg
   
   publish:
     needs: build
