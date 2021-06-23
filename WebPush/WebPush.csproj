@@ -9,12 +9,14 @@
     <Product />
     <Description>Web Push library for C#</Description>
     <PackageLicenseUrl>https://github.com/web-push-libs/web-push-csharp/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/web-push-libs/web-push-csharp/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/web-push-libs/web-push-csharp/</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/svandekrol/web-push-csharp/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/svandekrol/web-push-csharp/</RepositoryUrl>
     <PackageTags>web push notifications vapid</PackageTags>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AssemblyVersion>1.0.12.0</AssemblyVersion>
+    <FileVersion>1.0.12.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
