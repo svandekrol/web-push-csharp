@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore -c Release --verbosity normal
     - name: Test
-      run: dotnet test --no-build --verbosity normal    
+      run: dotnet test --no-build -c Release --verbosity normal    
     - name: Upload package
       uses: actions/upload-artifact@v2
       with:
@@ -45,3 +45,5 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: nuget
+      - name: publish nuget
+        run: dotnet nuget push WebPush.1.0.12.nupkg
