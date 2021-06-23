@@ -9,17 +9,41 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 3.1.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Pack
+      run: dotnet pack --verbosity normal --no-build
+    - name: Upload package
+      uses: actions/upload-artifact@v2
+      with:
+        name: nuget
+        path: bin/**/WebPush.1.0.11.nupkg
+  
+  publish:
+    needs: build
+    runs-on: windows-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: nuget
