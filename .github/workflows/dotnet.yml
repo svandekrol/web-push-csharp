@@ -46,4 +46,4 @@ jobs:
         with:
           name: nuget
       - name: publish nuget
-        run: dotnet nuget push "*.nupkg"
+        run: dotnet nuget push "**/*.nupkg"
