@@ -46,4 +46,4 @@ jobs:
         with:
           name: nuget
       - name: publish nuget
-        run: dotnet nuget push WebPush.1.0.12.nupkg
+        run: dotnet nuget push "*.nupkg"
