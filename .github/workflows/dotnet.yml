@@ -51,4 +51,4 @@ jobs:
       - name: authenticate
         run: dotnet nuget add source --username svandekrol@hubb.me --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/svandekrol/index.json"
       - name: publish nuget
-        run: dotnet nuget push "*.nupkg" -k ${{ env.PAT }} --source "github"
+        run: dotnet nuget push "*.nupkg" -k ${{ secrets.PAT }} --source "github"
