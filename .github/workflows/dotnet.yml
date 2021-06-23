@@ -43,9 +43,10 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.x
+          PAT: ${{ secrets.PAT }}
       - name: Download a single artifact
         uses: actions/download-artifact@v2
         with:
           name: nuget
       - name: publish nuget
-        run: dotnet nuget push "*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s "${{ github.workspace }}"
+        run: dotnet nuget push "*.nupkg" -k ${{ secrets.PAT }} --source "github"
