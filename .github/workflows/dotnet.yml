@@ -46,4 +46,4 @@ jobs:
         with:
           name: nuget
       - name: publish nuget
-        run: dotnet nuget push "**/*.nupkg" -k ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push "*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s .
