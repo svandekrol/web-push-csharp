@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;net48</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.12</Version>
-    <Authors>Cory Thompson</Authors>
+    <Version>1.0.13</Version>
+    <Authors>Scott Vande Krol</Authors>
     <Company />
     <Product />
     <Description>Web Push library for C#</Description>
@@ -15,8 +15,8 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <AssemblyVersion>1.0.12.0</AssemblyVersion>
-    <FileVersion>1.0.12.0</FileVersion>
+    <AssemblyVersion>1.0.13.0</AssemblyVersion>
+    <FileVersion>1.0.13.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
